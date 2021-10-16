@@ -1,18 +1,20 @@
-import React from 'react'
+import React, { Component } from 'react';
 import Header from '../Header'
 import ListaCliente from '../ListaCliente'
 import CrearCliente from '../CrearCliente'
 
-const Home = ( ) => {
+class Home extends Component {
 
-  return (
-    <div>
-      <Header></Header>
+  render() {
+    return (
       <div>
-        <CrearCliente></CrearCliente>
-        <ListaCliente></ListaCliente>
+        <Header></Header>
+        <div className="main">
+          <CrearCliente updateList={() => this.listaCliente.loadCustomerList()} updateKpi={() => this.listaCliente.loadCustomerKpi()}></CrearCliente>
+          <ListaCliente ref={instance => { this.listaCliente = instance; }}></ListaCliente>
+        </div>
       </div>
-    </div>
-  )
+    )
+  }
 }
 export default Home

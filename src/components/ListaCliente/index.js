@@ -25,7 +25,7 @@ class ListaCliente extends Component {
 
   loadCustomerList = () => {
     fetch(URL_CUSTOMERS_LIST).then(response => {
-      if (response.status == 200) {
+      if (response.status === 200) {
         response.json().then(data => {
           this.setState({
             customers: data 
@@ -39,7 +39,7 @@ class ListaCliente extends Component {
 
   loadCustomerKpi = () => {
     fetch(URL_CUSTOMER_KPI).then(response => {
-      if (response.status == 200) {
+      if (response.status === 200) {
         response.json().then(data => {
           this.setState({
             customersKpi: data 
@@ -69,7 +69,6 @@ class ListaCliente extends Component {
 
   render() {
     const { customers, customersKpi, showDeathDate } = this.state;
-    console.log(customersKpi)
     return (
       <div>
         <Table striped bordered hover responsive>

@@ -7,7 +7,7 @@ const Proyeccion = ( ) => {
   return (
     <div>
       <Header></Header>
-      <div>
+      <div className="main">
         <ListaCliente showDeathDate={true}></ListaCliente>
       </div>
     </div>

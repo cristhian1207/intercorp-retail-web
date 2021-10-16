@@ -45,7 +45,9 @@ class CrearCliente extends Component {
     }
 
     fetch(URL_CUSTOMER_POST, postParams).then(response => {
-      if (response.status == 201) {
+      if (response.status === 201) {
+        this.props.updateList();
+        this.props.updateKpi();
         alert('Cliente registrado')
       } else {
         alert('Error al registrar')
